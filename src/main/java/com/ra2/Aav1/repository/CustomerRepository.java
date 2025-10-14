@@ -70,7 +70,7 @@ import com.ra2.Aav1.model.Customer;
 	 //Retornar les dades de tots els registres de customers la BD
 	 public List<Customer> findAll() {
 		 return jdbctemp.query(
-				 "SELECT (id, firstName, lastName, age, yyear, cicle) "
+				 "SELECT id, firstName, lastName, age, yyear, cicle "
 				 + "from customers",
 				 new CustomerRowMapper()
 		 );
