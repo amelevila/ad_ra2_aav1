@@ -18,14 +18,14 @@ public class CustomerController {
 	@Autowired
 	private CustomerRepository customerRep;
 	
-	@PostMapping("/initDB")
+	@PostMapping("/createDB")
 	public String create_insertDB() {
 		customerRep.createTableCustomers();
 		customerRep.insertSampleData();
 		return "taula creada correctament i dades inserides";
 	}
 	
-	@GetMapping("/findAllCustomers")
+	@GetMapping("/customers")
 	public List<Customer> getAllCustomers() {
 		return customerRep.findAll();
 	}
